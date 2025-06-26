@@ -1,11 +1,11 @@
 body {
   font-family: Arial, sans-serif;
   padding: 1rem;
-  background: #f4f4f4;
+  background: #6F4E37;
 }
 
 .project-card {
-  background: white;
+  background: #33a7ff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin: 1rem 0;
