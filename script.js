@@ -1,20 +1,26 @@
-const container = document.getElementById('projects-container');
-const username = 'YOUR_GITHUB_USERNAME';
+// js/script.js
 
-fetch(`https://api.github.com/users/${shadejacobs}/repos`)
-  .then(response => response.json())
-  .then(repos => {
+const username = "shadejacobs";
+const container = document.getElementById("projects-container");
+
+async function getRepos() {
+  try {
+    const res = await fetch(`https://api.github.com/users/${shadejacobs}/repos`);
+    const repos = await res.json();
+
     repos.forEach(repo => {
-      const card = document.createElement('div');
-      card.className = 'project-card';
+      const card = document.createElement("div");
+      card.className = "repo-card";
       card.innerHTML = `
         <h2>${repo.name}</h2>
-        <p>${repo.description || 'No description provided'}</p>
+        <p>${repo.description || "No description"}</p>
         <a href="${repo.html_url}" target="_blank">View on GitHub</a>
       `;
       container.appendChild(card);
     });
-  })
-  .catch(error => {
-    console.error('Error fetching repos:', error);
-  });
+  } catch (err) {
+    console.error("Failed to fetch repos:", err);
+  }
+}
+
+getRepos();
