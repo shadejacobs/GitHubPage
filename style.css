@@ -16,8 +16,13 @@ body {
   body {
     padding: 0.5rem;
   }
-
-  .project-card {
-    font-size: 0.9rem;
-  }
 }
+  .repo-card {
+    font-size: 0.9rem;
+    background: #33a7ff;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 1rem 0;
+    padding: 1rem;
+  }

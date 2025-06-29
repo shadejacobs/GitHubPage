@@ -5,7 +5,7 @@ const container = document.getElementById("projects-container");
 
 async function getRepos() {
   try {
-    const res = await fetch(`https://api.github.com/users/${shadejacobs}/repos`);
+    const res = await fetch(`https://api.github.com/users/${username}/repos`);
     const repos = await res.json();
 
     repos.forEach(repo => {
@@ -14,8 +14,7 @@ async function getRepos() {
       card.innerHTML = `
         <h2>${repo.name}</h2>
         <p>${repo.description || "No description"}</p>
-        <a href="${repo.html_url}" target="_blank">View on GitHub</a>
-      `;
+        <a href="${repo.html_url}" target="_blank">View on GitHub</a>`;
       container.appendChild(card);
     });
   } catch (err) {
